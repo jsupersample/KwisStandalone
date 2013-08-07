@@ -19,9 +19,6 @@ namespace KwisStandalone
             Application.Run(new Form1());
 
 
-
-
-
         }
 
 

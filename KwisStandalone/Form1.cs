@@ -18,12 +18,17 @@ namespace KwisStandalone
         public Form1()
         {
             InitializeComponent();
+
+            //Sensor for the closed window.
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+
+            //We don't want to actually show a form, only the notification.
             this.WindowState = FormWindowState.Minimized;
             
-
+            //Initilize the pipeline.
             System.Threading.Thread thread = new System.Threading.Thread(DoRecognition);
 
+            //Engage!
             thread.Start();
             System.Threading.Thread.Sleep(5);
             
