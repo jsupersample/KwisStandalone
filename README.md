@@ -13,3 +13,6 @@ You need a Creative Interactive Gesture Camera for this to work at all.
 
 Known Issues:
 The application behaves erratically if Windows Media Center is not open.
+
+
+KwisCapture is also included.  It is a utility that creates a bitmap of a gesture sutible for the main application
