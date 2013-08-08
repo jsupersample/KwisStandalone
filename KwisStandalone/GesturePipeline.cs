@@ -237,10 +237,12 @@ namespace KwisStandalone
             {
                 //Set it as the foreground app.
                 SetForegroundWindow(p[0].MainWindowHandle);
+
+                //Send the keystroke.
+                SendKeys.SendWait(key);
             }
 
-            //Send the keystroke.
-            SendKeys.SendWait(key);
+
 
             //Sleep so we don't send too many commands at once.
             System.Threading.Thread.Sleep(sleep);
@@ -249,15 +251,19 @@ namespace KwisStandalone
 
         public void clickAndSendKey(int key, IntPtr handle)
         {
+            IntPtr ptr;
             System.Diagnostics.Process[] p = System.Diagnostics.Process.GetProcessesByName("ehshell");
-            IntPtr ptr = p[0].MainWindowHandle;
+
             if (p.Length > 0) //found
             {
+                ptr = p[0].MainWindowHandle;
                 SetForegroundWindow(ptr);
+                SendMessageW(ptr, WM_APPCOMMAND, ptr, (IntPtr)key);
+
             }
 
             
-            SendMessageW(ptr, WM_APPCOMMAND, ptr, (IntPtr)key);
+            
             System.Threading.Thread.Sleep(sleep);
         }
 
