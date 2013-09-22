@@ -16,3 +16,8 @@ The application behaves erratically if Windows Media Center is not open.
 
 
 KwisCapture is also included.  It is a utility that creates a bitmap of a gesture sutible for the main application
+
+Using:
+======
+After compiling, simple launch the generated executable.  You can quit by right clicking on the the notification icon in
+the system tray.
